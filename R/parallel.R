@@ -11,7 +11,7 @@ startParallel <- function(parallel = TRUE, ...)
   # if a cluster is provided as input argument use that cluster and exit
   if(any(class(parallel) %in% c("cluster", "mpicluster")))
     { cl <- parallel
-      parallel <- TRUE
+     # parallel <- TRUE
       attr(parallel, "type") <- foreach::getDoParName()
       attr(parallel, "cores") <- foreach::getDoParWorkers()
       attr(parallel, "cluster") <- cl
